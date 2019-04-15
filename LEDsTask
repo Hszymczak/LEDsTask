@@ -1,0 +1,58 @@
+int rd = D5;
+int grn = D3;
+int blu = D7;
+String input;
+void setup() {
+pinMode(rd, OUTPUT);
+pinMode(blu, OUTPUT);
+pinMode(grn, OUTPUT);
+Particle.function("inputfunct", inputfunct);
+}
+
+
+int inputfunct(String input) {
+bool grnOn;
+bool bluOn;
+bool rdOn;
+    if (input == "green"){
+        grnOn = !grnOn;
+        if (grnOn == true)
+        {
+            digitalWrite(grn, HIGH);
+        }
+        else if (grnOn == false)
+        {
+            digitalWrite(grn, LOW);
+        }
+        
+    }
+    else if (input == "blue"){
+        bluOn = !bluOn;
+        if (bluOn == true)
+        {
+            digitalWrite(blu, HIGH);
+        }
+        else if (bluOn == false)
+        {
+            digitalWrite(blu, LOW);
+        }
+        
+    }
+    else if (input == "red"){
+        rdOn = !rdOn;
+        if (rdOn == true)
+        {
+            digitalWrite(rd, HIGH);
+        }
+        else if (rdOn == false)
+        {
+            digitalWrite(rd, LOW);
+        }
+        
+    }
+}
+
+
+void loop() {
+    
+}
